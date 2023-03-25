@@ -45,7 +45,6 @@ this._router.navigate([x.id],{relativeTo:this._activatedRoute})
     console.log('Value of beer passed'+x.id);
     this._stdservice.ShowBeerDetails(x);
     this._router.navigate(['/beer-list',x.id])
-   // this._router.navigate([x.id],{relativeTo:this._activatedRoute})
       }
 
 
