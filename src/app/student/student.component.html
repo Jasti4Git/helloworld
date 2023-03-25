@@ -1,0 +1,16 @@
+<h2>This is student module check</h2>
+
+<ul class="items">
+<li (click)="onselect(x)" [class.selected]="isSelected(x)" *ngFor="let x of studentdetials">
+<span class="badge">{{x.id}} </span>{{x.name}} {{x.grade}}
+</li></ul>
+
+
+
+<h2>Beer List</h2>
+
+<li (click)="onBeerselect(x)" *ngFor="let x of beers">
+<span class="badge">{{x.name}}</span> 
+</li>
+
+

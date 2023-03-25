@@ -1,0 +1,50 @@
+<p>--------------Admin COMPONENT!----------</p>
+
+<!--Property Binding-->
+<input [id]="idForPropertyBinding" type="text" value="Angular10">
+
+<!--Class Binding-->
+<h2 [class]="addColorWithClassBinding">ANGULAR TESTING</h2>
+
+
+<p><Strong>-------DEMO FOR TWO WAY BINDING--------</Strong></p>
+<input [(ngModel)]="paramenterforTwoWayBinding" type="text">
+<button >Click me</button>
+<p>-------END--------</p>
+
+
+<p><Strong>-------DEMO FOR ngIf--------</Strong></p>
+
+<h1 *ngIf="ngifBoolParamter; then trueBlock else elseBlock"></h1>
+
+<ng-template #trueBlock>This is true</ng-template>
+<ng-template #elseBlock>This is false</ng-template>
+
+
+<p>-------END--------</p>
+
+
+{{paramenterforTwoWayBinding}}
+<!--{{carManufactureres | json}}-->
+
+{{fromparent}}
+
+<button (click)="onClick()">Click Me to send value to Parent</button>
+
+<h1>students from service</h1>
+{{errMsg}}
+
+
+<div *ngFor="let x of students">
+
+    <h2>{{x.id}}  {{x.name}}</h2>
+</div>
+
+<div *ngFor="let y of carManufactureres.Results">
+<h2>{{y.Mfr_Name}}</h2>
+</div>
+
+
+
+
+<p>--------------END OF Admin COMPONENT!----------</p>
