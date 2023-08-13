@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Beer } from '../beerInterface';
-import { StudentService } from '../student.service';
+import { beerService } from '../beer.service';
 
 @Component({
   selector: 'app-beer-details',
@@ -10,22 +10,32 @@ import { StudentService } from '../student.service';
 })
 export class BeerDetailsComponent implements OnInit {
 
-  constructor(private _activatedRoute: ActivatedRoute,public _stdservice:StudentService) { }
+  constructor(private _activatedRoute: ActivatedRoute,public _stdservice:beerService) {
 
-  beerobj: Beer | undefined;
-  myname:string="sreemanth";
+   }
+
+ 
+  myname:string="anil";
+  beerobj:Beer|undefined;
+ 
 
   ngOnInit(): void {
 
-
-    this._stdservice.OnShowDetailsClicked.subscribe((data:Beer)=>{
-      this.beerobj=data;
-      console.log('Value set to beer in subscribe'+this.beerobj.name);
-      console.log('the emitted beer value in subscribe'+data.name)});
+     this.displayDetails();
 
   }
 
-  
+
+displayDetails(){
+  this._stdservice.OnShowDetailsClicked.subscribe((data:Beer)=>{
+    this.beerobj=data;
+     // console.log('Value set to beer in subscribe: '+beerobj.name);
+     console.log('the emitted beer value in subscribe: '+data.name)
+  //  return {name:this.beerobj.name, price: this.beerobj.price}
+ }
+     );
+}
+
 
 
 }

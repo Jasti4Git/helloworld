@@ -1,0 +1,21 @@
+<div class="filter-container">
+
+    <!--Property Binding-->
+    <div [hidden]="hideFilterradio">
+
+
+    <input type="radio" name="filter" value="All" (change)="onRadioButtonChanged()"
+    [(ngModel)]=selectedRadioButton/>
+    <span>{{'All('+All+')'}}</span>
+
+    <input type="radio" name="filter" value="IPA" (change)="onRadioButtonChanged()"
+    [(ngModel)]=selectedRadioButton/>
+    <span>{{'IPA Beers('+Ipa+')'}}</span>
+
+    <input type="radio" name="filter" value="NONIPA" (change)="onRadioButtonChanged()"
+    [(ngModel)]=selectedRadioButton/>
+    <span>{{'Non IPA Beers('+NonIpa+')'}}</span>
+</div>
+
+
+</div>

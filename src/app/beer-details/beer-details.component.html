@@ -1,9 +1,3 @@
-{{myname}}
-<!--<div *ngIf="beerobj">-->
-<div *ngIf="_stdservice.OnShowDetailsClicked | async as beerobj">
-<p>beer-details works!</p>
-<p>{{beerobj?.name}}</p>
-<p>{{beerobj?.price}}</p>
-<p>{{beerobj?.id}}</p>
-</div>
-<!--</div>-->
+
+{{beerobj?.name}}
+

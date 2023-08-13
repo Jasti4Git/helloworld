@@ -4,22 +4,17 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule,Routes } from '@angular/router';
-import {ProductsModule} from "./products/products.module"
 import {CoreModule} from "./core/core.module"
 import { CommonModule } from '@angular/common';
 
 
 
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin.component';
-import { FacultyComponent } from './faculty/faculty.component';
-import { EnrollmentComponent } from './enrollment/enrollment.component';
-import { StudentNotFoundComponent } from './student-not-found/student-not-found.component';
-import { StudentComponent } from './student/student.component';
-import { StudentDetailsComponent } from './student-details/student-details.component';
-import { ResearchComponent } from './research/research.component';
-import { StudentFeeDetailsComponent } from './student-fee-details/student-fee-details.component';
+import { beerComponent } from './beer/beer.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
+import { HeaderComponent } from './header/header.component';
+import { FilterComponent } from './filter/filter.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -29,16 +24,12 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
 
 @NgModule({
   declarations: [
-    StudentComponent,
+    beerComponent,
     AppComponent,
-    AdminComponent,
-    FacultyComponent,
-    EnrollmentComponent,
-    StudentNotFoundComponent,
-    StudentDetailsComponent,
-    ResearchComponent,
-    StudentFeeDetailsComponent,
-    BeerDetailsComponent
+    BeerDetailsComponent,
+    HeaderComponent,
+    FilterComponent,
+    SearchComponent
     //routing
   ],
   imports: [
@@ -47,7 +38,6 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
     HttpClientModule,
     AppRoutingModule,
     RouterModule,
-    ProductsModule,
     CoreModule,
     CommonModule
   ],

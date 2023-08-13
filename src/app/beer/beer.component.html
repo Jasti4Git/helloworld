@@ -1,0 +1,27 @@
+<!-- <h2>This is student module check</h2>
+
+<ul class="items">
+<li (click)="onselect(x)" [class.selected]="isSelected(x)" *ngFor="let x of studentdetials">
+<span class="badge">{{x.id}} </span>{{x.name}} {{x.grade}}
+</li></ul> -->
+
+
+<app-header></app-header>
+<app-search></app-search>
+<!--Property binding and event binding-->
+<app-filter  [All]="getAllbeers()"
+[Ipa]="getIpaBeers()" 
+[NonIpa]="getNonIpaBeers()"  (filterRadioButtonSelectionChanged)="onFilterRadioButtonChange($event)"   ></app-filter>
+<h2>Beer List</h2>
+
+<ng-container *ngFor="let x of beers">
+ <!--ng if directive-->    
+<div *ngIf="courseCountRadioButton==='All'||x.name.includes(courseCountRadioButton.valueOf())||!x.name.includes('IPA')">    
+<li (click)="onBeerselect(x)" >
+<!--ng style directive-->    
+<span [ngStyle]="{color:x.name.includes('IPA')?'RED':'BLACK'}">{{x.name}}</span> 
+</li>
+</div>
+</ng-container>
+
+

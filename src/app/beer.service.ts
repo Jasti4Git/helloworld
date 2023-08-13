@@ -1,24 +1,16 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { studentInterface } from './studentInterface';
 import { Observable } from 'rxjs';
 import { Beer } from './beerInterface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
+export class beerService {
 
   constructor(private _http:HttpClient) { }
-  private _url="../assets/data/student.json";
 
-  getStudents(): Observable<studentInterface[]>{  
-//return [{"id":1, "name":"Rama"},{"id":2, "name":"Bheema"},{"id":3, "name":"Hanuman"}];
-
-return this._http.get<studentInterface[]>(this._url);
-
-}
 
 getBeerList(): Observable<Beer[]>{
 
@@ -27,11 +19,10 @@ getBeerList(): Observable<Beer[]>{
 
 }
 
-
 @Output() OnShowDetailsClicked= new EventEmitter<Beer>;
 
 ShowBeerDetails(beerobj:Beer){
-  console.log('Value of beer passed in showuserdetials'+beerobj.name);
+  console.log('Value of beer passed in showuserdetials: '+beerobj.name);
 this.OnShowDetailsClicked.emit(beerobj);
 }
 
