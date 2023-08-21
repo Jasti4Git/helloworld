@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { beerService } from './beer.service';
 
 @Component({
@@ -17,4 +18,19 @@ export class AppComponent {
 
   title = 'welcome Jasti';
 
+
+  //latha solution
+  constructor(private route:ActivatedRoute){}
+
+  isBRDDetailsActivated():boolean{
+  return this.route.snapshot.routeConfig?.path?.includes('beer-list')??false;
+  //
+  
+  
+  }
+
+
 }
+
+
+
